@@ -1,0 +1,45 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+
+{% block content %}
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/registrar_ponto.css' %}">
+{% endblock %}
+
+{% block extrajs %}
+    <script src="{% static 'js/registrar_ponto.js' %}"></script>
+{% endblock %}
+
+<div class="container">
+    <h2 class="title">Registro de Ponto</h2>
+
+    <div class="result">
+        <div class="result__title field-title">Seja Bem-Vindo(a):</div>
+        {% if user.is_authenticated %}
+            <div class="result__title field-title">Colaborador(a): {{ request.user.username }}</div>
+        {% else %}
+            <div class="result__title field-title">Usuário não autenticado</div>
+        {% endif %}
+        <div class="result__viewbox" id="result">{{ status_text }}</div>
+        <button id="copy-btn" style="--x: 0; --y: 0"><i class="far fa-copy"></i></button>
+    </div>
+    <br>
+    <br>
+    <!-- Formulário de registro de ponto -->
+    <form method="POST">
+        {% csrf_token %}
+        <div class="settings">
+            <span class="settings__title field-title">Registrar:</span>
+            <button class="btn generate" id="generate" type="submit">Registrar Ponto</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn generate">Logoff</button>
+    </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+<!-- historico_ponto.html -->
+<h2>Histórico de Ponto</h2>
+<table>
+    <tr>
+        <th>Data</th>
+        <th>Hora de Entrada</th>
+        <th>Hora de Saída</th>
+        <th>Status</th>
+    </tr>
+    {% for ponto in pontos %}
+        <tr>
+            <td>{{ ponto.data }}</td>
+            <td>{{ ponto.hora_entrada }}</td>
+            <td>{{ ponto.hora_saida }}</td>
+            <td>{{ ponto.status }}</td>
+        </tr>
+    {% endfor %}
+</table>

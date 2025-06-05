@@ -1,0 +1,927 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSync - Serviços Automotivos de Qualidade</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    {% if messages %}
+  <div class="messages">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>AUTO<span>SYNC</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li class="agendar-btn"><a href="#agendar">Agendar Serviço</a></li>
+                </ul>
+            </nav>
+            <div class="login-btn">
+                <a href="http://127.0.0.1:8000/admin">Logar como Funcionário</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>SERVIÇOS AUTOMOTIVOS ESPECIALIZADOS</h2>
+                <p>Manutenção e reparos de qualidade para seu veículo com garantia de serviço. Atendimento especializado com os melhores profissionais do mercado e equipamentos de última geração.</p>
+                <p class="hero-highlight">Agende seu serviço hoje e ganhe check-up completo do veículo gratuitamente!</p>
+                <div class="hero-buttons">
+                    <a href="#agendar" class="btn primary-btn">Agendar Serviço</a>
+                    <a href="#servicos" class="btn secondary-btn">Nossos Serviços</a>
+                </div>
+                <div class="hero-badges">
+                    <div class="badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Garantia de Serviço</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-tools"></i>
+                        <span>Peças Originais</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>Satisfação Garantida</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{% static 'images/oficina.png' %}" alt="Oficina Mecânica">
+                <div class="promo-badge">
+                    <span class="promo-title">PROMOÇÃO</span>
+                    <span class="promo-text">15% OFF</span>
+                    <span class="promo-desc">Na primeira visita</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="banner-content">
+                <h3>ATENDIMENTO EMERGENCIAL 24H</h3>
+                <p>Problemas com seu veículo? Conte com nossa assistência emergencial!</p>
+                <a href="tel:11987654321" class="btn emergency-btn"><i class="fas fa-phone"></i> (11) 98765-4321</a>
+            </div>
+        </section>
+
+        <section id="servicos" class="services">
+            <h2>Nossos Serviços</h2>
+            <p class="section-description">Oferecemos uma ampla gama de serviços automotivos para manter seu veículo em perfeitas condições. Todos os serviços são realizados por profissionais certificados e com garantia de qualidade.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Troca de Óleo</h3>
+                    <p>Serviço completo de troca de óleo e filtros para manter seu motor funcionando perfeitamente. Utilizamos apenas óleos de alta qualidade e filtros originais.</p>
+                    <ul class="service-features">
+                        <li>Troca de óleo do motor</li>
+                        <li>Substituição do filtro de óleo</li>
+                        <li>Verificação de níveis</li>
+                        <li>Diagnóstico preventivo</li>
+                    </ul>
+                    <div class="service-price">
+                        <span>A partir de</span>
+                        <strong>R$ 120,00</strong>
+                    </div>
+                    <a href="#agendar" class="btn service-btn">Agendar</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Sistema Elétrico</h3>
+                    <p>Diagnóstico e reparo de todo o sistema elétrico do seu veículo. Solucionamos problemas de bateria, alternador, motor de partida e sistema de iluminação.</p>
+                    <ul class="service-features">
+                        <li>Teste de bateria</li>
+                        <li>Verificação do alternador</li>
+                        <li>Reparo em chicotes elétricos</li>
+                        <li>Sistema de iluminação</li>
+                    </ul>
+                    <div class="service-price">
+                        <span>A partir de</span>
+                        <strong>R$ 150,00</strong>
+                    </div>
+                    <a href="#agendar" class="btn service-btn">Agendar</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Mecânica Geral</h3>
+                    <p>Serviços completos de mecânica para todos os tipos de veículos. Realizamos reparos no motor, transmissão, suspensão, freios e muito mais.</p>
+                    <ul class="service-features">
+                        <li>Reparo de motor</li>
+                        <li>Sistema de transmissão</li>
+                        <li>Suspensão e direção</li>
+                        <li>Sistema de freios</li>
+                    </ul>
+                    <div class="service-price">
+                        <span>A partir de</span>
+                        <strong>R$ 200,00</strong>
+                    </div>
+                    <a href="#agendar" class="btn service-btn">Agendar</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Injeção Eletrônica</h3>
+                    <p>Diagnóstico computadorizado e reparo de sistemas de injeção eletrônica. Identificamos e corrigimos falhas no funcionamento do motor.</p>
+                    <ul class="service-features">
+                        <li>Leitura de códigos de falha</li>
+                        <li>Limpeza de bicos injetores</li>
+                        <li>Regulagem eletrônica</li>
+                        <li>Reprogramação da ECU</li>
+                    </ul>
+                    <div class="service-price">
+                        <span>A partir de</span>
+                        <strong>R$ 180,00</strong>
+                    </div>
+                    <a href="#agendar" class="btn service-btn">Agendar</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Alinhamento e Balanceamento</h3>
+                    <p>Serviço de alinhamento e balanceamento para garantir estabilidade, segurança e maior durabilidade dos pneus do seu veículo.</p>
+                    <ul class="service-features">
+                        <li>Alinhamento computadorizado</li>
+                        <li>Balanceamento de rodas</li>
+                        <li>Rodízio de pneus</li>
+                        <li>Verificação da geometria</li>
+                    </ul>
+                    <div class="service-price">
+                        <span>A partir de</span>
+                        <strong>R$ 140,00</strong>
+                    </div>
+                    <a href="#agendar" class="btn service-btn">Agendar</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Ar Condicionado</h3>
+                    <p>Manutenção, recarga de gás e reparo do sistema de ar condicionado do seu veículo para garantir conforto em todas as estações.</p>
+                    <ul class="service-features">
+                        <li>Recarga de gás</li>
+                        <li>Limpeza do sistema</li>
+                        <li>Troca de filtros</li>
+                        <li>Reparo de vazamentos</li>
+                    </ul>
+                    <div class="service-price">
+                        <span>A partir de</span>
+                        <strong>R$ 250,00</strong>
+                    </div>
+                    <a href="#agendar" class="btn service-btn">Agendar</a>
+                </div>
+            </div>
+            
+            <div class="services-more">
+                <p>Precisando de outros serviços? Entre em contato conosco!</p>
+                <a href="#contato" class="btn secondary-btn">Ver Todos os Serviços</a>
+            </div>
+        </section>
+
+        <section id="diferenciais" class="features">
+            <h2>Nossos Diferenciais</h2>
+            <p class="section-description">O que nos torna a melhor escolha para cuidar do seu veículo</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Profissionais Certificados</h3>
+                    <p>Nossa equipe é formada por mecânicos com anos de experiência no mercado automotivo.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Equipamentos Modernos</h3>
+                    <p>Utilizamos ferramentas e equipamentos de ponta para diagnósticos precisos e reparos eficientes.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garantia de Serviço</h3>
+                    <p>Todos os nossos serviços possuem garantia, proporcionando tranquilidade e segurança aos nossos clientes.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Agilidade na Entrega</h3>
+                    <p>Comprometimento com prazos e transparência em todo o processo de manutenção do seu veículo.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Preços Justos</h3>
+                    <p>Orçamentos transparentes e preços competitivos, sem surpresas ou cobranças adicionais.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Atendemos Todas as Marcas</h3>
+                    <p>Experiência com veículos nacionais e importados de todas as marcas e modelos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="cta-content">
+                <h3>AGENDE SEU SERVIÇO ONLINE E GANHE UM CHECK-UP DO SEU VEÍCULO</h3>
+                <p>Promoção válida para agendamentos realizados pelo site.</p>
+                <a href="#agendar" class="btn primary-btn">Agendar Agora</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="about">
+            <div class="about-content">
+                <h2>Sobre Nossa Oficina</h2>
+                <p class="about-highlight">Há mais de 15 anos cuidando do seu veículo com excelência e compromisso.</p>
+                <p>Fundada em 2010, a Auto Mecânica nasceu da paixão por automóveis e do compromisso com a qualidade. Começamos como uma pequena oficina e hoje somos referência em serviços automotivos na região, atendendo mais de 5.000 clientes satisfeitos.</p>
+                <p>Nossa oficina se destaca pelo atendimento personalizado e serviços de alta qualidade. Contamos com profissionais altamente qualificados e utilizamos equipamentos de última geração para garantir o melhor para seu veículo.</p>
+                <p>Nossa missão é proporcionar tranquilidade e segurança aos nossos clientes, oferecendo soluções eficientes e transparentes para cada necessidade automotiva.</p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <h4><i class="fas fa-check-circle"></i> Missão</h4>
+                        <p>Oferecer serviços automotivos de excelência, garantindo a satisfação e segurança dos nossos clientes.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4><i class="fas fa-eye"></i> Visão</h4>
+                        <p>Ser reconhecida como a melhor oficina mecânica da região, referência em qualidade e atendimento.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4><i class="fas fa-heart"></i> Valores</h4>
+                        <p>Ética, transparência, compromisso com a qualidade e respeito ao cliente.</p>
+                    </div>
+                </div>
+                
+                <a href="#contato" class="btn primary-btn">Entre em Contato</a>
+            </div>
+            <div class="about-image">
+                <img src="{% static 'images/carro.webp' %}" alt="Serviço Automotivo">
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-text">Anos de Experiência</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-text">Clientes Satisfeitos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-text">Profissionais Qualificados</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipe" class="team">
+            <h2>Nossa Equipe</h2>
+            <p class="section-description">Conheça os profissionais que fazem da Auto Mecânica uma referência em qualidade</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Carlos Silva</h3>
+                    <p class="member-role">Diretor Técnico</p>
+                    <p class="member-desc">Mais de 20 anos de experiência em mecânica automotiva. Especialista em diagnóstico eletrônico e injeção.</p>
+                    <div class="member-cert">
+                        <span><i class="fas fa-certificate"></i> Certificação Bosch</span>
+                        <span><i class="fas fa-certificate"></i> Especialista em Injeção Eletrônica</span>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Marcos Oliveira</h3>
+                    <p class="member-role">Chefe de Oficina</p>
+                    <p class="member-desc">Especialista em mecânica geral com foco em motores e transmissão. Responsável pela qualidade dos serviços.</p>
+                    <div class="member-cert">
+                        <span><i class="fas fa-certificate"></i> Técnico em Mecânica Automotiva</span>
+                        <span><i class="fas fa-certificate"></i> Especialista em Motores</span>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Juliana Santos</h3>
+                    <p class="member-role">Especialista em Elétrica</p>
+                    <p class="member-desc">Técnica especializada em sistemas elétricos e eletrônicos automotivos. Referência em diagnóstico de falhas.</p>
+                    <div class="member-cert">
+                        <span><i class="fas fa-certificate"></i> Técnica em Eletrônica</span>
+                        <span><i class="fas fa-certificate"></i> Especialista em Sistemas Elétricos</span>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Roberto Almeida</h3>
+                    <p class="member-role">Atendimento ao Cliente</p>
+                    <p class="member-desc">Responsável pelo atendimento personalizado e acompanhamento de todo o processo de serviço.</p>
+                    <div class="member-cert">
+                        <span><i class="fas fa-certificate"></i> Especialista em Atendimento</span>
+                        <span><i class="fas fa-certificate"></i> Consultor Técnico</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="testimonials">
+            <h2>O Que Nossos Clientes Dizem</h2>
+            <p class="section-description">A satisfação dos nossos clientes é o nosso maior orgulho</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Excelente atendimento e serviço de qualidade. Meu carro estava com problemas no sistema elétrico e eles resolveram rapidamente. Recomendo a todos!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-photo">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ricardo Mendes</h4>
+                            <p>Cliente desde 2018</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Profissionais muito competentes e preço justo. Levei meu carro para fazer a revisão completa e fiquei muito satisfeita com o resultado. Voltarei com certeza!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-photo">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Paula Costa</h4>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Atendimento rápido e eficiente. Tive um problema com o ar condicionado do meu carro e eles diagnosticaram e resolveram no mesmo dia. Ótimo custo-benefício!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-photo">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Fernando Gomes</h4>
+                            <p>Cliente desde 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-cta">
+                <p>Junte-se aos nossos clientes satisfeitos!</p>
+                <a href="#agendar" class="btn primary-btn">Agendar Serviço</a>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <h2>Perguntas Frequentes</h2>
+            <p class="section-description">Tire suas dúvidas sobre nossos serviços</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Qual é o prazo médio para realização dos serviços?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O prazo varia de acordo com o tipo de serviço. Serviços simples como troca de óleo são realizados em aproximadamente 1 hora. Serviços mais complexos podem levar de 1 a 3 dias úteis. Sempre informamos o prazo exato antes de iniciar o trabalho.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Vocês oferecem garantia para os serviços?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, todos os nossos serviços possuem garantia. Para serviços de manutenção, oferecemos garantia de 3 meses. Para reparos e substituição de peças, a garantia é de 6 meses. Peças específicas podem ter garantia do fabricante, que pode ser superior à nossa.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como funciona o agendamento de serviços?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você pode agendar pelo site, preenchendo o formulário na seção "Agendar Serviço", por telefone ou WhatsApp. Recomendamos o agendamento com pelo menos 2 dias de antecedência para garantir disponibilidade no horário desejado.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Vocês trabalham com todas as marcas de veículos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, atendemos veículos de todas as marcas, nacionais e importados. Nossa equipe é treinada e possui ferramentas específicas para trabalhar com diferentes modelos e tecnologias.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quais formas de pagamento são aceitas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceitamos pagamentos em dinheiro, cartões de débito e crédito (parcelamento em até 6x sem juros), transferência bancária e PIX. Para empresas, também trabalhamos com faturamento mediante cadastro prévio.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Vocês oferecem serviço de busca e entrega do veículo?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, oferecemos serviço de leva e traz para clientes em um raio de até 10km da nossa oficina. Este serviço tem um custo adicional que varia conforme a distância. Consulte-nos para mais informações.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-more">
+                <p>Não encontrou sua dúvida? Entre em contato conosco!</p>
+                <a href="#contato" class="btn secondary-btn">Fale Conosco</a>
+            </div>
+        </section>
+
+        <section class="brands">
+            <h2>Trabalhamos com Todas as Marcas</h2>
+            <div class="brands-container">
+                <div class="brand-item"><i class="fas fa-car"></i> Volkswagen</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Fiat</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Chevrolet</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Ford</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Toyota</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Honda</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Hyundai</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Renault</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Nissan</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Mercedes</div>
+                <div class="brand-item"><i class="fas fa-car"></i> BMW</div>
+                <div class="brand-item"><i class="fas fa-car"></i> Audi</div>
+            </div>
+        </section>
+
+            <section id="agendar" class="schedule">
+                <h2>Agende Seu Serviço</h2>
+                <p class="section-description">Preencha o formulário abaixo para agendar seu serviço. Nossa equipe entrará em contato para confirmar o horário.</p>
+                
+                <div class="schedule-container">
+                    <div class="schedule-info">
+                        <h3>Por que agendar online?</h3>
+                        <ul class="schedule-benefits">
+                            <li><i class="fas fa-check-circle"></i> Atendimento prioritário</li>
+
+                            <li><i class="fas fa-check-circle"></i> Confirmação imediata</li>
+                            <li><i class="fas fa-check-circle"></i> Escolha o melhor horário para você</li>
+                            <li><i class="fas fa-check-circle"></i> Check-up gratuito do veículo</li>
+                        </ul>
+                        
+                        <div class="schedule-contact">
+                            <h4>Prefere agendar por telefone?</h4>
+                            <p><i class="fas fa-phone"></i> (11) 5555-1234</p>
+                            <p><i class="fas fa-whatsapp"></i> (11) 98765-4321</p>
+                        </div>
+                        
+                        <div class="schedule-hours">
+                            <h4>Horário de Funcionamento</h4>
+                            <p><i class="fas fa-clock"></i> Segunda a Sexta: 8h às 18h</p>
+                            <p><i class="fas fa-clock"></i> Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                    
+    <form method="POST" action="{% url 'home' %}" class="schedule-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-group">
+            <label for="nome_completo">Nome Completo</label>
+            <input type="text" id="nome_completo" name="nome_completo" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="veiculo">Veículo</label>
+            <input type="text" id="veiculo" name="veiculo" placeholder="Marca, Modelo e Ano" required>
+        </div>
+
+        <div class="form-group">
+            <label for="placa_do_veiculo">Placa do Veículo</label>
+            <input type="text" id="placa_do_veiculo" name="placa_do_veiculo" placeholder="ABC-1234">
+        </div>
+
+        <div class="form-group">
+            <label for="servico_desejado">Serviço Desejado</label>
+            <select id="servico_desejado" name="servico_desejado" required>
+                <option value="">Selecione um serviço</option>
+                <option value="troca_oleo">Troca de Óleo</option>
+                <option value="sistema_eletrico">Sistema Elétrico</option>
+                <option value="mecanica_geral">Mecânica Geral</option>
+                <option value="injecao_eletronica">Injeção Eletrônica</option>
+                <option value="alinhamento_balanceamento">Alinhamento e Balanceamento</option>
+                <option value="ar_condicionado">Ar Condicionado</option>
+                <option value="outro">Outro</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="data_preferencial">Data Preferencial</label>
+            <input type="date" id="data_preferencial" name="data_preferencial" required>
+        </div>
+
+        <div class="form-group">
+            <label for="horario_preferencial">Horário Preferencial</label>
+            <select id="horario_preferencial" name="horario_preferencial" required>
+                <option value="">Selecione um horário</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="observacoes">Observações</label>
+            <textarea id="observacoes" name="observacoes" rows="4" placeholder="Descreva o problema ou informe detalhes adicionais"></textarea>
+        </div>
+
+        <div class="form-group form-terms">
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Concordo com os termos de serviço e política de privacidade</label>
+        </div>
+
+        <button type="submit" class="btn primary-btn">Agendar Agora</button>
+        <p class="form-disclaimer">Ao agendar, você receberá 10% de desconto exclusivo para agendamentos online.</p>
+    </form>
+        </section>
+
+        <section id="contato" class="contact">
+            <h2>Entre em Contato</h2>
+            <p class="section-description">Estamos à disposição para atender você da melhor forma possível</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Av. dos Automóveis, 1234<br>Bairro Mecânico - São Paulo/SP<br>CEP: 01234-567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefones</h3>
+                            <p>Fixo: (11) 5555-1234<br>Celular: (11) 98765-4321<br>WhatsApp: (11) 98765-4321</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@automecânica.com.br<br>atendimento@automecânica.com.br<br>suporte@automecânica.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horário de Funcionamento</h3>
+                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h<br>Domingo e Feriados: Fechado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h3>Redes Sociais</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <p class="social-text">Siga-nos nas redes sociais e fique por dentro das novidades, dicas e promoções!</p>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <h3>Como Chegar</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975427861383!2d-46.6565!3d-23.5651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzU0LjQiUyA0NsKwMzknMjMuNCJX!5e0!3m2!1spt-BR!2sbr!4v1621436289132!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    
+                    <div class="contact-directions">
+                        <h4>Referências</h4>
+                        <p><i class="fas fa-info-circle"></i> Próximo ao Shopping Center Norte</p>
+                        <p><i class="fas fa-info-circle"></i> A 500m da estação de metrô Tietê</p>
+                        <p><i class="fas fa-info-circle"></i> Estacionamento próprio gratuito para clientes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <h3>Envie uma Mensagem</h3>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-nome">Nome</label>
+                            <input type="text" id="contact-nome" name="contact-nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">E-mail</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-telefone">Telefone</label>
+                            <input type="tel" id="contact-telefone" name="contact-telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-assunto">Assunto</label>
+                            <select id="contact-assunto" name="contact-assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="orcamento">Orçamento</option>
+                                <option value="agendamento">Agendamento</option>
+                                <option value="duvida">Dúvida</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-mensagem">Mensagem</label>
+                        <textarea id="contact-mensagem" name="contact-mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h3>Assine Nossa Newsletter</h3>
+                <p>Receba dicas de manutenção, novidades e promoções exclusivas diretamente no seu e-mail.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn">Inscrever-se</button>
+                </form>
+                <p class="newsletter-disclaimer">Ao se inscrever, você concorda em receber e-mails da Auto Mecânica. Você pode cancelar a inscrição a qualquer momento.</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AUTO<span>MECÂNICA</span></h2>
+                    <p>Qualidade e confiança em cada serviço.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> (11) 5555-1234</p>
+                        <p><i class="fas fa-envelope"></i> contato@automecânica.com.br</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. dos Automóveis, 1234 - São Paulo/SP</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#equipe">Equipe</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#agendar">Agendar</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Nossos Serviços</h3>
+                    <ul>
+                        <li>Troca de Óleo</li>
+                        <li>Sistema Elétrico</li>
+                        <li>Mecânica Geral</li>
+                        <li>Injeção Eletrônica</li>
+                        <li>Alinhamento e Balanceamento</li>
+                        <li>Ar Condicionado</li>
+                        <li>Suspensão e Freios</li>
+                        <li>Diagnóstico Computadorizado</li>
+                        <li>Troca de Correia Dentada</li>
+                        <li>Revisão Completa</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Receba Novidades</h3>
+                    <p>Inscreva-se para receber nossas promoções e novidades.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit" class="btn">Inscrever</button>
+                    </form>
+                    <div class="footer-social">
+                        <h4>Siga-nos</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="footer-payments">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-pix"></i>
+                        <i class="fas fa-money-bill-wave"></i>
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                </div>
+                
+                <div class="footer-certifications">
+                    <h4>Certificações</h4>
+                    <div class="certification-icons">
+                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-award"></i>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Auto Mecânica. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Política de Cookies</a>
+                </div>
+                <p class="footer-developer">Desenvolvido por <a href="#">Sua Empresa</a></p>
+            </div>
+        </footer>
+        
+        <div class="whatsapp-button">
+            <a href="https://wa.me/5511987654321" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after clicking a link
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                    }
+                });
+            });
+            
+            // FAQ accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+            
+            // Testimonial slider (simple version)
+            let currentSlide = 0;
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            
+            function showSlide(index) {
+                testimonials.forEach((slide, i) => {
+                    slide.style.display = i === index ? 'block' : 'none';
+                });
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % testimonials.length;
+                showSlide(currentSlide);
+            }
+            
+            // Initialize slider
+            showSlide(currentSlide);
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>
+
